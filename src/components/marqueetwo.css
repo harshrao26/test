@@ -1,0 +1,37 @@
+.marquee-container {
+    overflow: hidden; /* Hide overflow */
+    white-space: nowrap; /* Prevent line breaks */
+    width: 100%; /* Full width */
+    background-color: #FFFFFF; /* Light background for contrast */
+  }
+  
+  .marquee {
+    display: inline-flex; /* Flexbox for horizontal alignment */
+    animation: marquee 500s linear infinite; /* Increased duration for a slower effect */
+  }
+  
+  @keyframes marquee {
+    0% {
+        transform: translateX(0); /* Start position */
+    }
+    100% {
+        transform: translateX(-50%); /* End position to create the scroll effect */
+    }
+  }
+  
+  .card {
+    transition: transform 0.3s; /* Smooth transition on hover */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Scale up on hover */
+  }
+  
+  /* Styles for the logo images */
+  .logo-image {
+    width: 100%; /* Set to full width of card */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80px; /* Set a maximum height */
+    object-fit: contain; /* Scale the image nicely */
+    padding: 10px 20px;  
+  }
