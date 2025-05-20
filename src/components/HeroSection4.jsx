@@ -166,7 +166,7 @@ const images = [
 const avatars = [
   /* your avatar objects */
 ];
-const rotatingWords = ["Compliance", "Registration", "Business", "Advisory"];
+const rotatingWords = ["Compliance", "Registration", "Business Reg", "Advisory Reg"];
 
 export default function HeroSection() {
   const [fade, setFade] = useState(true);

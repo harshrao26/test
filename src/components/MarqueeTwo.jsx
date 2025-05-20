@@ -52,8 +52,8 @@ const marqueeItems = [
 
 const Marquee = () => (
   <>
-    <div className="relative overflow-hidden mb-3 py-3 bg-white text-gray-500 mt-10">
-      <div className=" whitespace-nowrap animate-marquee flex gap-20 text-xl items-center">
+    <div className="relative rounded-  max-w-7xl mx-auto mb-3 py-3 bg-white overflow-hidden text-gray-500 mt-10 ">
+      <div className="rounded-xl whitespace-nowrap max-w-7xl mx-auto animate-marquee flex gap-20 text-xl items-center">
         {marqueeItems.map((item, i) => (
           <span className="  flex items-center gap-2" key={i}><Globe size={20} /> {item}</span>
         ))}
