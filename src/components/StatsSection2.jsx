@@ -8,42 +8,45 @@ import {
 } from 'lucide-react'
 
 const stats = [
-  { value: '250M+',   label: 'invoices uploaded',   Icon: Archive },
-  { value: '6M+',     label: 'Businesses visible',  Icon: BarChart2 },
-  { value: '$300B+',  label: 'trade value filled',  Icon: Banknote },
-  { value: '35,000+', label: 'retail investors',    Icon: UserCheck },
-  { value: '6M+',     label: 'tax returns filed',   Icon: FileText },
+  { value: '250M+', label: 'Invoices Uploaded', Icon: Archive },
+  { value: '6M+', label: 'Businesses Visible', Icon: BarChart2 },
+  { value: '$300B+', label: 'Trade Value Filled', Icon: Banknote },
+  { value: '35,000+', label: 'Retail Investors', Icon: UserCheck },
+  { value: '6M+', label: 'Tax Returns Filed', Icon: FileText },
 ]
 
 export default function NumbersSection() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row gap-8">
-      {/* text */}
-      <div className="md:w-1/2">
-        <h2 className="text-4xl font-bold text-gray-900">
-          Numbers don’t lie!
-        </h2>
-        <p className="mt-4 text-gray-600">
-          Products that perform seamlessly during any surge—no uptime worries. Ingest and process any data, anytime.
-        </p>
-      </div>
+    <section className="max-w-7xl mx-auto px-6 py-20">
+      <div className="grid md:grid-cols-2 gap-16 items-center">
+        {/* Text Side */}
+        <div>
+          <h2 className="text-5xl font-semibold text-gray-900 leading-tight">
+            Trust built<br />
+            on performance<span className="text-[#F93827]">.</span>
+          </h2>
+          <p className="mt-6 text-lg text-gray-600">
+            From day one, our platform has scaled with businesses globally. Reliable infrastructure for massive volume and mission-critical processes.
+          </p>
+        </div>
 
-      {/* cards */}
-      <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {stats.map(({ value, label, Icon }, i) => (
-          <div
-            key={i}
-            className="bg-white p-5 rounded-lg shadow hover:shadow-md transition"
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-2xl font-semibold">{value}</h3>
-                <p className="mt-1 text-gray-500">{label}</p>
+        {/* Stats Side */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {stats.map(({ value, label, Icon }, i) => (
+            <div
+              key={i}
+              className="flex flex-col justify-between p-6 bg-gray-50 rounded-xl border border-gray-200 hover:shadow-lg transition duration-300"
+            >
+              <div className="flex items-center mb-4">
+                <div className="bg-gradient-to-br from-[#16C47F] to-[#66e4b2] text-white p-3 rounded-full shadow-lg">
+                  <Icon className="w-5 h-5" />
+                </div>
               </div>
-              <Icon className="w-8 h-8 text-blue-500" />
+              <h3 className="text-2xl font-bold text-gray-900">{value}</h3>
+              <p className="text-sm text-gray-500 mt-1">{label}</p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )

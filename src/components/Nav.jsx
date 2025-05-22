@@ -164,7 +164,7 @@ const Navbar = () => {
 
   return (
     <div className="fixed w-full z-50 bg-white shadow-lg">
-      <div className="bg-yellow-500 text-white text-sm px-6 py-2">
+      <div className="bg-[#F93827] text-white text-sm px-6 py-2">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-2">
           {/* Left: Contact Info */}
           <div className="flex items-center gap-6 flex-wrap">
@@ -206,7 +206,7 @@ const Navbar = () => {
       </div>
 
       <nav className="bg-white max-w-7xl mx-auto z-20     py-2 flex items-center justify-between">
-        <div className="text-2xl font-semibold text-yellow-600">
+        <div className="text-2xl font-semibold text-blue-600">
           <img src={logo} alt="" className="w-12" />
         </div>
         <div className="flex gap-8 text-sm font-medium text-gray-900">
@@ -217,10 +217,10 @@ const Navbar = () => {
               onMouseEnter={() => setHoveredMenu(index)}
               onMouseLeave={() => setHoveredMenu(null)}
             >
-              <div className="flex items-center gap-1 cursor-pointer hover:text-yellow-600 transition">
+              <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition">
                 <span>{menu.label}</span>
                 {hoveredMenu === index ? (
-                  <ChevronUp size={16} className="text-yellow-600" />
+                  <ChevronUp size={16} className="text-blue-600" />
                 ) : (
                   <ChevronDown size={16} className="text-gray-600" />
                 )}
@@ -263,9 +263,9 @@ const Navbar = () => {
         
 
         <div className="flex items-center gap-4">
-          <button className="bg-green-500 hover:bg-green-600 transition relative text-white px-5 py-2 rounded-full text-sm font-medium shadow">
+          <button className="bg-[#FF9D23] hover:bg-orange-400 transition relative text-white px-5 py-2 rounded-full text-sm font-medium shadow">
           Book An Appointment
-          <p className="h-1 w-1 top-1 right-2 bg-green-500 rounded-full  -ping absolute">
+          <p className="h-[5px] w-[5px] top-1 right-2 bg-green-400 rounded-full   -ping absolute">
 
           </p>
           </button>
@@ -276,8 +276,8 @@ const Navbar = () => {
 };
 
 const DropdownItem = ({ icon, label }) => (
-  <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-yellow-50 cursor-pointer transition">
-    <div className="text-yellow-500">{icon}</div>
+  <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 cursor-pointer transition">
+    <div className="text-blue-500">{icon}</div>
     <span className="text-sm text-gray-800">{label}</span>
   </div>
 );

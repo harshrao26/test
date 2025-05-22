@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const Footer = () => (
-  <footer className="bg-gradient-to-br from-blue-400 to-blue-600 text-gray-50">
+  <footer className="bg-gradient-to-br from-green-400 to-green-600 text-gray-50">
     <div className="max-w-7xl mx-auto px-6 py-16 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
       {/* Logo & Description */}
       <div>
@@ -87,15 +87,15 @@ const Footer = () => (
         <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
         <div className="space-y-3 text-sm">
           <div className="flex items-center">
-            <MapPin size={18} className="mr-2 text-blue-" />
+            <MapPin size={18} className="mr-2 text-green-" />
             Bangalore, Karnataka
           </div>
           <div className="flex items-center">
-            <Phone size={18} className="mr-2 text-blue-" />
+            <Phone size={18} className="mr-2 text-green-" />
             +91 98765 43210
           </div>
           <div className="flex items-center">
-            <Mail size={18} className="mr-2 text-blue-" />
+            <Mail size={18} className="mr-2 text-green-" />
             support@kanoonkart.com
           </div>
           <div className="mt-4">

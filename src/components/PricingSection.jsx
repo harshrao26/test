@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { User, Briefcase, Users, Check } from "lucide-react";
 
-const plans = [
+const allPlans = [
   {
-    name: "Basic",
+    name: "Service 1",
     Icon: User,
     monthly: 9999,
     yearly: 9999 * 12 * 0.8, // 20% off
     features: ["Kick‐off Call", "Market Analysis", "Membership Model"],
   },
   {
-    name: "Pro",
+    name: "Service 2",
     Icon: Briefcase,
     monthly: 19999,
     yearly: 19999 * 12 * 0.8,
@@ -23,108 +23,120 @@ const plans = [
     popular: true,
   },
   {
-    name: "Advanced",
+    name: "Service 3",
+    Icon: Users,
+    monthly: 29999,
+    yearly: 29999 * 12 * 0.8,
+    features: ["Everything in Pro", "Branding", "Community", "Tech & Support"],
+  },
+  {
+    name: "Service 4",
+    Icon: User,
+    monthly: 9999,
+    yearly: 9999 * 12 * 0.8, // 20% off
+    features: ["Kick‐off Call", "Market Analysis", "Membership Model"],
+  },
+  {
+    name: "Service 5",
+    Icon: Briefcase,
+    monthly: 19999,
+    yearly: 19999 * 12 * 0.8,
+    features: [
+      "Everything in Basic",
+      "Space Planning",
+      "Compliance",
+      "Projections",
+    ],
+    popular: true,
+  },
+  {
+    name: "Service 6",
     Icon: Users,
     monthly: 29999,
     yearly: 29999 * 12 * 0.8,
     features: ["Everything in Pro", "Branding", "Community", "Tech & Support"],
   },
 ];
+const visibleCount = 3;
 
 export default function PricingSection() {
+  const [activeIndex, setActiveIndex] = useState(0);
   const [yearly, setYearly] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % allPlans.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const getVisiblePlans = () => {
+    let plans = [];
+    for (let i = -1; i <= 1; i++) {
+      plans.push(allPlans[(activeIndex + i + allPlans.length) % allPlans.length]);
+    }
+    return plans;
+  };
+
+  const visiblePlans = getVisiblePlans();
 
   return (
     <section className="py-16 bg-gray-50">
-      <h2 className="text-3xl font-medium text- -600 mb-8 text-center">
+      <h2 className="text-3xl font-medium text-center text-gray-700 mb-8">
         Choose Your Plan (Retainership)
       </h2>
-      {/* Billing toggle */}
-      <div className="flex justify-center items-center mb-12 space-x-4">
-        <span className={!yearly ? "font-semibold" : "text-gray-500"}>
-          Monthly 
-        </span>
-        <label className="relative inline-block w-10 h-6">
-          <input
-            type="checkbox"
-            checked={yearly}
-            onChange={() => setYearly((v) => !v)}
-            className="opacity-0 w-0 h-0"
-          />
-          <span className="absolute cursor-pointer inset-0 bg-gray-300 rounded-full transition" />
-          <span
-            className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform ${
-              yearly ? "translate-x-4" : ""
-            }`}
-          />
-        </label>
-        <span className={yearly ? "font-semibold" : "text-gray-500"}>
-          Yearly<span className="text-sm text-green-600"> (20% off)</span>
-        </span>
-      </div>
 
-      {/* Plan cards */}
-      <div className="max-w-6xl mx-auto grid gap-8 px-6 sm:grid-cols-1 md:grid-cols-3">
-        {plans.map(({ name, Icon, monthly, yearly: yr, features, popular }) => {
-          const price = yearly ? Math.round(yr) : monthly;
+      {/* Toggle and plans */}
+      {/* ... keep your billing toggle unchanged ... */}
+
+      <div className="relative max-w-7xl mx-auto flex justify-center items-center gap-6 px-6">
+        {visiblePlans.map((plan, i) => {
+          const isCenter = i === 1;
+          const price = yearly ? Math.round(plan.yearly) : plan.monthly;
           return (
             <div
-              key={name}
-              className={`relative flex flex-col p-6 rounded-xl shadow-md transition hover:shadow-xl ${
-                popular
-                  ? "bg-gradient-to-br from-blue-500 to-blue-600 text-white"
-                  : "bg-white text-gray-900"
+              key={plan.name}
+              className={`transition-  transition-all ease-in-out duration-500 rounded-xl p-6 shadow-md flex flex-col items-center justify-between ${
+                isCenter
+                  ? "scale-100 z-20 bg-gree "
+                  : "scale-90 z-10 bg-gray-50 opacity-80"
               }`}
+              style={{ width: "500px", transform: isCenter ? "scale(1)" : "scale(0.9)" }}
             >
-              {popular && (
-                <div className="absolute top-4 right-4 px-3 py-1 text-xs bg-yellow-400 font-semibold rounded-full">
-                  Popular
-                </div>
-              )}
-              <div
-                className={`w-14 h-14 mx-auto mb-4 flex items-center justify-center rounded-full ${
-                  popular ? "bg-white/20" : "bg-blue-50"
-                }`}
-              >
-                <Icon
-                  size={28}
-                  className={popular ? "text-white" : "text-blue-600"}
-                />
-              </div>
-              <h3 className="text-xl font-semibold text-center mb-2">{name}</h3>
-              <p className="text-4xl font-medium text-center mb-6">
+              <plan.Icon size={28} className="mb-4 text-green-500" />
+              <h3 className="text-2xl font-medium mb-2">{plan.name}</h3>
+              <p className="text-3xl font-semibold mb-4">
                 ₹{price.toLocaleString()}
                 <span className="text-base font-medium">
                   {yearly ? "/yr" : "/mo"}
                 </span>
               </p>
-              <ul className="flex-1 space-y-2 mb-6">
-                {features.map((f) => (
-                  <li key={f} className="flex items-center">
-                    <Check
-                      size={16}
-                      className={`${
-                        popular ? "text-white" : "text-green-500"
-                      } mr-2`}
-                    />
-                    <span className={popular ? "text-white" : "text-gray-700"}>
-                      {f}
-                    </span>
+              <ul className="text-sm mb-4 flex flex-col items-start gap-2">
+                {plan.features.map((f) => (
+                  <li key={f} className="flex items-center gap-4 ">
+                    <Check size={14} className="text-green-500 mr-2" />
+                    {f}
                   </li>
                 ))}
               </ul>
-              <button
-                className={`mt-auto py-2 rounded-full font-medium text-sm transition ${
-                  popular
-                    ? "bg-white text-blue-600 hover:bg-gray-100"
-                    : "bg-blue-500 text-white hover:bg-blue-700"
-                }`}
-              >
-                Choose {name}
+              <button className="bg-[#16C47F] text-white px-4 py-2 rounded-full">
+                Choose {plan.name}
               </button>
             </div>
           );
         })}
+      </div>
+
+      {/* Dots */}
+      <div className="flex justify-center mt-6 gap-2">
+        {allPlans.map((_, i) => (
+          <span
+            key={i}
+            className={`w-3 h-3 rounded-full ${
+              i === activeIndex ? "bg-green-600" : "bg-gray-300"
+            }`}
+          ></span>
+        ))}
       </div>
     </section>
   );

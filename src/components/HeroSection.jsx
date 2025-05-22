@@ -85,7 +85,7 @@ export default function HeroSection() {
                 fade ? "opacity-100" : "opacity-0"
               }`}
             >
-              <span className="bg-blue-500 text-white px-4 rounded-full">
+              <span className="bg-[#F93827] text-white px-4 rounded-full">
                 {" "}
                 {rotatingWords[wordIndex]}
               </span>

@@ -42,8 +42,9 @@ const ClientMarquee = () => {
 
   return (
     <div className="bg-white py-10 overflow-hidden max-w-7xl mx-auto">
-      <h2 className="text-3xl font-medium  text-blue-00 mb-10 text-center">
-        The People Behind Our Success
+      <h2 className="text-3xl font-medium  text-blue-00 mb-10 text-center  ">
+        <span className="border-b-3 border-[#16C47F] pb-2">        The People Behind Our Success
+</span>
       </h2>
 
       {/* Marquee Row 1 */}
@@ -61,6 +62,45 @@ const ClientMarquee = () => {
       </div>
 
       {/* Marquee Row 2 (reverse direction) */}
+      <div className="overflow-hidden whitespace-nowrap mb-6">
+        <div className="inline-block animate-marquee-reverse ">
+          {[...logos, ...logos].map((logo, index) => (
+            <img
+              key={`top-${index}`}
+              src={` ${logo}`}
+              alt="client"
+              className="h-32 mx-6 inline   transition"
+            />
+          ))}
+        </div>
+      </div>
+      {/* Marquee Row 1 */}
+      <div className="overflow-hidden whitespace-nowrap mb-6">
+        <div className="inline-block animate-marquee">
+          {[...logos, ...logos].map((logo, index) => (
+            <img
+              key={`top-${index}`}
+              src={` ${logo}`}
+              alt="client"
+              className="h-32 mx-6 inline   transition"
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Marquee Row 2 (reverse direction) */}
+      <div className="overflow-hidden whitespace-nowrap mb-6">
+        <div className="inline-block animate-marquee-reverse ">
+          {[...logos, ...logos].map((logo, index) => (
+            <img
+              key={`top-${index}`}
+              src={` ${logo}`}
+              alt="client"
+              className="h-32 mx-6 inline   transition"
+            />
+          ))}
+        </div>
+      </div>
       
 
       {/* Inline CSS for animation */}
