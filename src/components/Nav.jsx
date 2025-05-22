@@ -206,7 +206,7 @@ const Navbar = () => {
       </div>
 
       <nav className="bg-white max-w-7xl mx-auto z-20     py-2 flex items-center justify-between">
-        <div className="text-2xl font-semibold text-blue-600">
+        <div className="text-2xl font-semibold text-[#16C47F]">
           <img src={logo} alt="" className="w-12" />
         </div>
         <div className="flex gap-8 text-sm font-medium text-gray-900">
@@ -217,10 +217,10 @@ const Navbar = () => {
               onMouseEnter={() => setHoveredMenu(index)}
               onMouseLeave={() => setHoveredMenu(null)}
             >
-              <div className="flex items-center gap-1 cursor-pointer hover:text-blue-600 transition">
+              <div className="flex items-center gap-1 cursor-pointer hover:text-[#16C47F] transition">
                 <span>{menu.label}</span>
                 {hoveredMenu === index ? (
-                  <ChevronUp size={16} className="text-blue-600" />
+                  <ChevronUp size={16} className="text-[#16C47F]" />
                 ) : (
                   <ChevronDown size={16} className="text-gray-600" />
                 )}
@@ -277,7 +277,7 @@ const Navbar = () => {
 
 const DropdownItem = ({ icon, label }) => (
   <div className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 cursor-pointer transition">
-    <div className="text-blue-500">{icon}</div>
+    <div className="text-[#16C47F]">{icon}</div>
     <span className="text-sm text-gray-800">{label}</span>
   </div>
 );
