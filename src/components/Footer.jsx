@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 
 const Footer = () => (
-  <footer className="bg-gradient-to-br from-green-400 to-green-600 text-gray-50">
+  <footer className="bg-gradient-to-br from-[#16C47F] to-green-600 text-gray-50">
     <div className="max-w-7xl mx-auto px-6 py-16 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
       {/* Logo & Description */}
       <div>

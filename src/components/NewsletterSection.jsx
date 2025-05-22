@@ -4,7 +4,7 @@ export default function NewsletterSection() {
   return (
     <section className="bg-zinc-50 py-20 px-4 text-center">
       {/* Heading */}
-      <h2 className="text-4xl font-semibold text-green-500 mb-4">
+      <h2 className="text-4xl font-semibold text-[#16C47F] mb-4">
         Subscribe to Our Newsletter
       </h2>
 
@@ -18,11 +18,11 @@ export default function NewsletterSection() {
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-full sm:w-2/3 px-5 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-full sm:w-2/3 px-5 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#16C47F]"
         />
         <button
           type="submit"
-          className="bg-green-500 hover:bg-green-600 text-white font-medium px-6 py-3 rounded-md shadow transition"
+          className="bg-[#16C47F] hover:bg-[#16C47F] text-white font-medium px-6 py-3 rounded-md shadow transition"
         >
           Subscribe
         </button>
