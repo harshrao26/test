@@ -40,7 +40,7 @@ const Marquee = () => (
           const Icon = icons[i % icons.length];
           return (
             <span className="flex items-center gap-2 min-w-max" key={i}>
-              <Icon size={18} className="text-[#16C47F]" /> {item}
+              <Icon size={18} className="text-[#27548A]" /> {item}
             </span>
           );
         })}

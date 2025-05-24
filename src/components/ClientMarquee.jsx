@@ -41,9 +41,10 @@ const ClientMarquee = () => {
   ];
 
   return (
-    <div className="bg-white py-10 overflow-hidden max-w-7xl mx-auto">
-      <h2 className="text-3xl font-medium  text-blue-00 mb-10 text-center  ">
-        <span className="border-b-3 border-[#16C47F] pb-2">        The People Behind Our Success
+    <div className="bg-[#F3F3E0]">
+      <div className=" py-20 overflow-hidden max-w-7xl mx-auto">
+      <h2 className="text-4xl font-semibold  text-blue-00 mb-10 text-center  ">
+        <span className="text-[#183B4E]  pb-2">        The People Behind Our Success
 </span>
       </h2>
 
@@ -120,6 +121,7 @@ const ClientMarquee = () => {
           animation: marquee-reverse 90s linear infinite;
         }
       `}</style>
+    </div>
     </div>
   );
 };

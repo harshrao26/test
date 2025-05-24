@@ -52,7 +52,8 @@ export default function EventGalleryCarousel() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 pt-20 text-center">
+   <div className='bg-[#F3F3E0] pb-20'>
+     <div className="w-full max-w-7xl mx-auto px-4 pt-20 text-center">
       {/* Heading */}
       <h2 className="text-4xl font-semibold text-gray-800 mb-12">Event Highlights</h2>
 
@@ -91,5 +92,6 @@ export default function EventGalleryCarousel() {
         ))}
       </div>
     </div>
+   </div>
   );
 }

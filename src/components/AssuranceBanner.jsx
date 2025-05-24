@@ -3,11 +3,11 @@ import lock from '../assets/lock.png'
 
 const AssuranceBanner = () => {
   return (
-    <div className="bg-gradient-to-r my-20 max-w-7xl relative mx-auto from-[#FFD65A] to-white rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row items-center gap-6">
+    <div className="bg-gradient-to-r my-10 max-w-7xl relative mx-auto from-[#FFD65A] to-white rounded-2xl shadow-md p-6 md:p-10 flex flex-col md:flex-row items-center gap-6">
       {/* Icon or Logo Placeholder */}
-      <div className="flex-shrink-0 absolute p-6 -left-[0%]">
+      {/* <div className="flex-shrink-0 absolute p-6 -left-[0%]">
         <img src={lock} alt="" className="h-32" />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="flex-1">

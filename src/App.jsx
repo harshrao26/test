@@ -23,12 +23,14 @@ import TestimonialSlider from "./components/TestimonialSlider.jsx";
 import Carousel3D from "./components/Carousel3D.jsx";
 import BlogTripleCarousel from "./components/BlogTripleCarousel.jsx";
 import NewsletterSection from "./components/NewsletterSection.jsx";
+import WeAreAssociated from "./components/WeAreAssociated.jsx";
+
 
 const App = () => {
   return (
     <div className="">
-      <div className="fixed right-0 top-1/2 flex rounded text-center bg-[#16C47F] py-4 px-2 z-20 text-sm text-white">
-        Write <br /> A <br /> Review
+      <div className="fixed right-0 top-3/4 flex rounded text-center bg-[#16C47F] pl-4 py-2 px-2 z-20 text-sm text-white">
+        Write   A  Review
       </div>
       <Nav />
       {/* <HeroSection /> */}
@@ -43,13 +45,13 @@ const App = () => {
       <Graphs />
       <ClientMarquee />
 
-      <ProductGridSection />
+      {/* <ProductGridSection /> */}
 
-      <StatsSection2 />
+      {/* <StatsSection2 /> */}
+      <WeAreAssociated />
       <TestimonialSlider />
       <Carousel3D />
       {/* <Industries /> */}
-      <AssuranceBanner />
       <PricingSection />
       <BlogTripleCarousel />
 

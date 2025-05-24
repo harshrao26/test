@@ -2,9 +2,10 @@ import React from 'react';
 
 export default function NewsletterSection() {
   return (
-    <section className="bg-zinc-50 py-20 px-4 text-center">
-      {/* Heading */}
-      <h2 className="text-4xl font-semibold text-[#16C47F] mb-4">
+    <section className="bg-[#F3F3E0] py-20  text-center">
+    <div className='bg-amber-00'>
+        {/* Heading */}
+      <h2 className="text-4xl font-semibold text-[#183B4E] mb-4 ">
         Subscribe to Our Newsletter
       </h2>
 
@@ -18,15 +19,16 @@ export default function NewsletterSection() {
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-full sm:w-2/3 px-5 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#16C47F]"
+          className="w-full sm:w-2/3 px-5 py-3 border bg-white border-[#DDA853] rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-[#DDA853]"
         />
         <button
           type="submit"
-          className="bg-[#16C47F] hover:bg-[#16C47F] text-white font-medium px-6 py-3 rounded-md shadow transition"
+          className="bg-[#DDA853] hover:bg-[#ba975e] text-white font-medium px-6 py-3 rounded-md shadow transition"
         >
           Subscribe
         </button>
       </form>
+    </div>
     </section>
   );
 }

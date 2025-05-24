@@ -7,7 +7,7 @@ const allPlans = [
     Icon: User,
     monthly: 9999,
     yearly: 9999 * 12 * 0.8, // 20% off
-    features: ["Kick‐off Call", "Market Analysis", "Membership Model"],
+    features: ["Kick‐off Call", "Market Analysis", "Membership Model","Kick‐off Call", "Market Analysis", "Membership Model"],
   },
   {
     name: "Service 2",
@@ -19,6 +19,7 @@ const allPlans = [
       "Space Planning",
       "Compliance",
       "Projections",
+      "Kick‐off Call", "Market Analysis", "Membership Model"
     ],
     popular: true,
   },
@@ -27,14 +28,14 @@ const allPlans = [
     Icon: Users,
     monthly: 29999,
     yearly: 29999 * 12 * 0.8,
-    features: ["Everything in Pro", "Branding", "Community", "Tech & Support"],
+    features: ["Everything in Pro", "Branding", "Community", "Tech & Support", "Kick‐off Call", "Market Analysis", "Membership Model"],
   },
   {
     name: "Service 4",
     Icon: User,
     monthly: 9999,
     yearly: 9999 * 12 * 0.8, // 20% off
-    features: ["Kick‐off Call", "Market Analysis", "Membership Model"],
+    features: ["Kick‐off Call", "Market Analysis", "Membership Model", "Kick‐off Call", "Market Analysis", "Membership Model"],
   },
   {
     name: "Service 5",
@@ -46,6 +47,7 @@ const allPlans = [
       "Space Planning",
       "Compliance",
       "Projections",
+      "Kick‐off Call", "Market Analysis", "Membership Model"
     ],
     popular: true,
   },
@@ -54,11 +56,10 @@ const allPlans = [
     Icon: Users,
     monthly: 29999,
     yearly: 29999 * 12 * 0.8,
-    features: ["Everything in Pro", "Branding", "Community", "Tech & Support"],
+    features: ["Everything in Pro", "Branding", "Community", "Tech & Support","Kick‐off Call", "Market Analysis", "Membership Model"],
   },
 ];
-const visibleCount = 3;
-
+ 
 export default function PricingSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [yearly, setYearly] = useState(false);
@@ -82,8 +83,8 @@ export default function PricingSection() {
 
   return (
     <section className="py-16 bg-gray-50">
-      <h2 className="text-3xl font-medium text-center text-gray-700 mb-8">
-        Choose Your Plan (Retainership)
+      <h2 className="text-3xl font-medium text-center text-gray-900 mb-8">
+        Choose Your Plan - Retainership
       </h2>
 
       {/* Toggle and plans */}
@@ -98,12 +99,19 @@ export default function PricingSection() {
               key={plan.name}
               className={`transition-  transition-all ease-in-out duration-500 rounded-xl p-6 shadow-md flex flex-col items-center justify-between ${
                 isCenter
-                  ? "scale-100 z-20 bg-gree "
-                  : "scale-90 z-10 bg-gray-50 opacity-80"
+                  ? "scale-100 z-20 bg-[#27548A] text-white transition-all ease-in-out duration-500"
+                  : "scale-90 z-10 bg-gray-50 opacity-50 transition-all ease-in-out duration-500"
               }`}
               style={{ width: "500px", transform: isCenter ? "scale(1)" : "scale(0.9)" }}
             >
-              <plan.Icon size={28} className="mb-4 text-green-500" />
+              <plan.Icon size={28} className="mb-4 text-[#27548A]" />
+
+              {isCenter ? (
+                              <plan.Icon size={50} className="mb-4 text-[#27548A] p-2 bg-white  rounded-full" />
+
+              ): (
+                   <plan.Icon size={20} className="text-white" />
+               )}
               <h3 className="text-2xl font-medium mb-2">{plan.name}</h3>
               <p className="text-3xl font-semibold mb-4">
                 ₹{price.toLocaleString()}
@@ -114,14 +122,24 @@ export default function PricingSection() {
               <ul className="text-sm mb-4 flex flex-col items-start gap-2">
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-center gap-4 ">
-                    <Check size={14} className="text-green-500 mr-2" />
+                    <Check size={18} className="text-[#27548A] bg-white mr-2" />
                     {f}
                   </li>
                 ))}
               </ul>
-              <button className="bg-[#16C47F] text-white px-4 py-2 rounded-full">
-                Choose {plan.name}
-              </button>
+
+              {isCenter ? (
+                <button className="bg-white text-[#27548A] px-4 py-2 rounded-full">
+                  Choose {plan.name}
+                </button>
+              ) : (
+                <button className="bg-[#27548A] text-white px-4 py-2 rounded-full">
+                  Choose {plan.name}
+                </button>
+              )}
+
+              
+              
             </div>
           );
         })}
@@ -133,7 +151,7 @@ export default function PricingSection() {
           <span
             key={i}
             className={`w-3 h-3 rounded-full ${
-              i === activeIndex ? "bg-green-600" : "bg-gray-300"
+              i === activeIndex ? "bg-[#27548A]" : "bg-gray-300"
             }`}
           ></span>
         ))}
